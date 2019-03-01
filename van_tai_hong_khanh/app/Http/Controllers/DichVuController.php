@@ -87,7 +87,7 @@ class DichVuController extends Controller
         //
         $input = $request->all();
         $dich_vu = bai_viet::where('id',$input['id'])->first();
-        $dich_vu->ten_dich_vu = $input['ten_dich_vu'];
+        $dich_vu->tieu_de = $input['tieu_de'];
         $dich_vu->noi_dung = $input['noi_dung'];
         $dich_vu->seo_title = $input['seo_title'];
         $dich_vu->seo_description = $input['seo_description'];

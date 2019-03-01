@@ -44,10 +44,14 @@
 <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>    
 
+
 <script>
         $(document).ready(function() {
             $('.summernote').summernote({height: 300});
-            $(".summernote").summernote("code", '<?php echo $ban_xe->noi_dung;  ?>');
+            var s = unescape('{{ $ban_xe->noi_dung }}');
+
+            s = $.parseHTML(s)[0].textContent;
+            $(".summernote").summernote("code", s);
         });
 </script>
 @endsection

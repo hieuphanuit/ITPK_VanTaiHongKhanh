@@ -47,7 +47,10 @@
 <script>
         $(document).ready(function() {
             $('.summernote').summernote({height: 300});
-            $(".summernote").summernote("code", '<?php echo $dich_vu->noi_dung;  ?>');
+            var s = unescape('{{ $dich_vu->noi_dung }}');
+
+            s = $.parseHTML(s)[0].textContent;
+            $(".summernote").summernote("code", s);
         });
 </script>
 @endsection

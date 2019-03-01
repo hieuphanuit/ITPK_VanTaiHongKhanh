@@ -43,6 +43,7 @@
         <li class="{{(Request::url() == url('admin/tuyen-dung')) ? 'active' : ''}}" ><a href="{{url('admin/tuyen-dung')}}"><i class="fa fa-link"></i> <span>TUYỂN DỤNG</span></a></li>
         <li class="{{(Request::url() == url('admin/tin-tuc')) ? 'active' : ''}}" ><a href="{{url('admin/tin-tuc')}}"><i class="fa fa-link"></i> <span>TIN TỨC</span></a></li>
         <li class="{{(Request::url() == url('admin/lien-he')) ? 'active' : ''}}" ><a href="{{url('admin/lien-he')}}"><i class="fa fa-link"></i> <span>LIÊN HỆ</span></a></li>
+        <li class="{{(Request::url() == url('admin/thong-tin-lien-he')) ? 'active' : ''}}" ><a href="{{url('admin/thong-tin-lien-he')}}"><i class="fa fa-link"></i> <span>THÔNG TIN LIÊN HỆ</span></a></li>
         <li class="{{(Request::url() == url('admin/slider')) ? 'active' : ''}}" ><a href="{{url('admin/slider')}}"><i class="fa fa-link"></i> <span>SLIDER</span></a></li>
         <li class="{{(Request::url() == url('admin/video-clip')) ? 'active' : ''}}" ><a href="{{url('admin/video-clip')}}"><i class="fa fa-link"></i> <span>VIDEO CLIP</span></a></li>
         <li class="{{(Request::url() == url('admin/tin-tuc-su-kien')) ? 'active' : ''}}" ><a href="{{url('admin/tin-tuc-su-kien')}}"><i class="fa fa-link"></i> <span>TIN TỨC - SỰ KIỆN </span></a></li>
@@ -87,7 +88,7 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script src="js/adminLTE/adminlte.min.js"></script>
+<script src="{{asset('js/adminLTE/adminlte.min.js')}}"></script>
 @section('js')
 @show
 </body>

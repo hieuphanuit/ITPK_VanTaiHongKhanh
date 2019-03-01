@@ -22,7 +22,7 @@ class TinTucController extends Controller
     public function create()
     {
         //
-        return view('admin.BanXe.create');
+        return view('admin.TinTuc.create');
     }
 
     /**
@@ -110,13 +110,13 @@ class TinTucController extends Controller
         //
         $tin_tucs = bai_viet::where('loai_bai_viet', 'tin_tuc')->get();
 
-        return view('admin.TinTuc.index',['ban_xes' => $tin_tucs]);
+        return view('admin.TinTuc.index',['tin_tucs' => $tin_tucs]);
     }
 
     public function showAdmin($id)
     {
         //
         $tin_tuc = bai_viet::where('id',$id)->first();
-        return view('admin.TinTuc.show',['ban_xe' => $tin_tuc]);
+        return view('admin.TinTuc.show',['tin_tuc' => $tin_tuc]);
     }
 }
