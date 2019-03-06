@@ -1,6 +1,6 @@
 @extends('admin.master')
 @section('content')
-    <form action="{{ url('/admin/tuyen-dung/update') }}" method="POST">
+    <form action="{{ url('/admin/tuyen-dung/update') }}" method="POST" >
         {{ csrf_field() }}
         <input type="hidden" value="{{$tuyen_dung->id}}" name='id'>
         <div class="form-group">

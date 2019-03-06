@@ -8,11 +8,15 @@
 @section('content')
 
 
-    <form action="{{ url('/admin/dich-vu') }}" method="POST">
+    <form action="{{ url('/admin/dich-vu') }}" method="POST" enctype="multipart/form-data">
         {{ csrf_field() }}
         <div class="form-group">
             <label for="usr">Tên Dịch Vụ:</label>
             <input type="text" class="form-control" name="tieu_de">
+        </div>
+        <div class="form-group">
+            <label for="usr">Hình Mô Tả:</label>
+            <input type="file" class="" name="hinh_mo_ta">
         </div>
         <textarea name="noi_dung" class="summernote"></textarea>
         <br>

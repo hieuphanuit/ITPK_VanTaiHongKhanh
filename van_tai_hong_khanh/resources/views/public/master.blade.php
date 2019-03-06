@@ -1,11 +1,18 @@
 @include('public.header')
 
-<div class="content">
+
+@section('content-full')
+    
+@show
+
+
+
+
     @section('title')
     @show
     @section('content')
   
     @show
-</div>
+
 
 @include('public.footer')

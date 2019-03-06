@@ -11,10 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('public.master');
-});
-
+Route::get('/', 'HomeController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');;
@@ -38,6 +35,9 @@ Route::get('/admin/dich-vu/{id}/edit', 'DichVuController@edit')->middleware('aut
 Route::post('/admin/dich-vu', 'DichVuController@store')->middleware('auth');
 Route::post('/admin/dich-vu/update', 'DichVuController@update')->middleware('auth');
 Route::post('/admin/dich-vu/delete', 'DichVuController@destroy')->middleware('auth');
+
+Route::get('/dich-vu/{tieu_de}', 'DichVuController@show');
+Route::get('/dich-vu', 'DichVuController@index');
 
 //bán xe ban-xe
 Route::get('/admin/ban-xe/create', 'BanXeController@create')->middleware('auth');
@@ -73,3 +73,10 @@ Route::post('/lien-he', 'LienHeController@submitForm');
 //thong tin lien he
 Route::get('/admin/thong-tin-lien-he', 'ThongTinLienHeController@indexAdmin')->middleware('auth');
 
+//cai dat 
+Route::get('/admin/cai-dat', 'CaiDatController@indexAdmin')->middleware('auth');
+Route::post('/admin/cai-dat/update', 'CaiDatController@update')->middleware('auth');
+
+//slider
+Route::get('/admin/slider', 'SliderController@indexAdmin')->middleware('auth');
+Route::post('/admin/slider/update', 'SliderController@update')->middleware('auth');

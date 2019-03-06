@@ -8,28 +8,45 @@
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
-        <link rel="stylesheet" href="{{asset('css/public.css')}}" rel='stylesheet'>
+        <link rel="stylesheet" href="{{asset('css/public.css')}}">
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
+        <link rel="stylesheet" href="{{asset('css/owl.theme.green.min.css')}}">
+       
         @yield('css')
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <script src="{{asset('js/custom.js')}}"></script>
-
+        <script src="{{asset('js/owl.carousel.js')}}"></script>
     </head>
     <body oncopy="return false" oncut="return false" onpaste="return false">
-        <script>
-            window.fbAsyncInit = function() {
-                FB.init({
-                appId            : '{{env('FB_APP_ID', '')}}',
-                autoLogAppEvents : true,
-                xfbml            : true,
-                version          : 'v3.2'
-                });
-            };
-        </script>
-        <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script>
+    window.fbAsyncInit = function() {
+        FB.init({
+        xfbml            : true,
+        version          : 'v3.2'
+        });
+    };
+
+    (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+    fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+    <!-- Your customer chat code -->
+    <div class="fb-customerchat"
+    attribution=setup_tool
+    page_id="{{env('FB_PAGE_ID')}}">
+    </div>
+
         @section('after-body')
         @show
         <header>
@@ -41,27 +58,27 @@
                                 <span class="navbar-toggler-icon"></span>
                             </button>
                             <div class="collapse navbar-collapse" id="navbarNav">
-                                <ul class="navbar-nav">
+                                <ul class="navbar-nav d-flex justify-content-around" style="width:100%">
                                     <li class="nav-item active">
-                                        <a class="nav-link" href="#">TRANG CHỦ<span class="sr-only">(current)</span></a>
+                                        <a class="nav-link" href="{{url('/')}}">TRANG CHỦ<span class="sr-only">(current)</span></a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">GIỚI THIỆU</a>
+                                        <a class="nav-link" href="{{url('/gioi-thieu')}}">GIỚI THIỆU</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">DỊCH VỤ</a>
+                                        <a class="nav-link" href="{{url('/dich-vu')}}">DỊCH VỤ</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">BÁN XE</a>
+                                        <a class="nav-link" href="{{url('/ban-xe')}}">BÁN XE</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">MÔI GIỚI BĐS</a>
+                                        <a class="nav-link" href="{{url('/moi-doi-bds')}}">MÔI GIỚI BĐS</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">TIN TỨC</a>
+                                        <a class="nav-link" href="{{url('/tin-tuc')}}">TIN TỨC</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">LIÊN HỆ</a>
+                                        <a class="nav-link" href="{{url('/lien-he')}}">LIÊN HỆ</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="#">SEARCH IMAGE</a>

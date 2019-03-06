@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 use App\bai_viet;
-
-
 use Illuminate\Http\Request;
 
 class DichVuController extends Controller
@@ -16,7 +14,9 @@ class DichVuController extends Controller
     public function index()
     {
         //
+        $dichvus = bai_viet::where('loai_bai_viet','dich_vu')->get();
 
+        return view('public.DichVu.index',['dichvus' => $dichvus]);
         
     }
 
@@ -46,6 +46,10 @@ class DichVuController extends Controller
         $dich_vu->seo_description = $input['seo_description'];
         $dich_vu->seo_robots = $input['seo_robots'];
         $dich_vu->loai_bai_viet = 'dich_vu';
+        $dich_vu->url_prefix = $this->utf8tourl($input['tieu_de']);
+        $hinh_mo_ta = $this->upload_image($request);
+        $dich_vu->hinh_mo_ta = $hinh_mo_ta;
+
         $dich_vu->save();
         return redirect('/admin/dich-vu');
     }
@@ -56,11 +60,11 @@ class DichVuController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function show($id)
+    public function show($url_prefix)
     {
         //
-        $dich_vu = bai_viet::where('id',$id)->first();
-        return view('admin.DichVu.show',['dich_vu' => $dich_vu]);
+        $dich_vu = bai_viet::where([['url_prefix',$url_prefix],['loai_bai_viet','dich_vu']])->first();
+        return view('public.DichVu.show',['dich_vu' => $dich_vu]);
     }
 
     /**

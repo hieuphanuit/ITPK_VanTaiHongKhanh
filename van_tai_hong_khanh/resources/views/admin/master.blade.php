@@ -12,6 +12,11 @@
   <link rel="stylesheet" href="{{url('/')}}/css/adminLTE/skin-blue.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="{{asset('js/adminLTE/adminlte.min.js')}}"></script>
   @section('css')
   
   @show
@@ -48,9 +53,9 @@
         <li class="{{(Request::url() == url('admin/video-clip')) ? 'active' : ''}}" ><a href="{{url('admin/video-clip')}}"><i class="fa fa-link"></i> <span>VIDEO CLIP</span></a></li>
         <li class="{{(Request::url() == url('admin/tin-tuc-su-kien')) ? 'active' : ''}}" ><a href="{{url('admin/tin-tuc-su-kien')}}"><i class="fa fa-link"></i> <span>TIN TỨC - SỰ KIỆN </span></a></li>
         <li class="{{(Request::url() == url('admin/gio-hoat-dong')) ? 'active' : ''}}" ><a href="{{url('admin/gio-hoat-dong')}}"><i class="fa fa-link"></i> <span>GIỜ HOẠT ĐỘNG</span></a></li>
-        <li class="{{(Request::url() == url('admin/su-kien-moi')) ? 'active' : ''}}" ><a href="{{url('admin/su-kien-moi')}}"><i class="fa fa-link"></i> <span>SỰ KiỆN MỚI</span></a></li>
         <li class="{{(Request::url() == url('admin/thu-vien-anh')) ? 'active' : ''}}" ><a href="{{url('admin/thu-vien-anh')}}"><i class="fa fa-link"></i> <span>THƯ VIỆN ẢNH</span></a></li>
         <li class="{{(Request::url() == url('admin/footer')) ? 'active' : ''}}" ><a href="{{url('admin/footer')}}"><i class="fa fa-link"></i> <span>FOOTER, BẢN ĐỒ</span></a></li>
+        <li class="{{(Request::url() == url('admin/cai-dat')) ? 'active' : ''}}" ><a href="{{url('admin/cai-dat')}}"><i class="fa fa-link"></i> <span>CÀI ĐẶT</span></a></li>
       </ul>
     @show
     </section>
@@ -85,10 +90,7 @@
   </footer>
   <div class="control-sidebar-bg"></div>
 </div>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script src="{{asset('js/adminLTE/adminlte.min.js')}}"></script>
+
 @section('js')
 @show
 </body>

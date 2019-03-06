@@ -2,33 +2,18 @@
 
 
 @section('meta')
-    <title>{{$gioi_thieu->seo_title}}</title>
-    <meta name="description" content="{{$gioi_thieu->seo_description}}">
-    <meta name="robots" content="{{$gioi_thieu->seo_robots}}">
+    <title>{{$dich_vu->seo_title}}</title>
+    <meta name="description" content="{{$dich_vu->seo_description}}">
+    <meta name="robots" content="{{$dich_vu->seo_robots}}">
 @endsection
 
 @section('title')
-    <h1>{{$gioi_thieu->tieu_de}}</h1>
+    <h1>{{$dich_vu->tieu_de}}</h1>
 
 @endsection
 @section('content')
-@if (\Session::has('success'))
-    <br>
-    <div class="alert alert-success">
-        <ul>
-            <li>{!! \Session::get('success')[0]!!}</li>
-        </ul>
-    </div>
-@endif
-@if (\Session::has('errors'))
-    <div class="alert alert-danger">
-        <ul>
-            <li>{!! \Session::get('errors')[0] !!}</li>
-        </ul>
-    </div>    
-@endif
-   <div style="width: 100%">
-        <?php echo($gioi_thieu->noi_dung) ?>
+   <div>
+        <?php echo($dich_vu->noi_dung) ?>
    </div>
    <div>
         <label style="padding-top: 35px; vertical-align: middle">Chia sẻ: </label>
