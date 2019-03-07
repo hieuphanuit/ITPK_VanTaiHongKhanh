@@ -48,6 +48,10 @@ Route::post('/admin/ban-xe', 'BanXeController@store')->middleware('auth');
 Route::post('/admin/ban-xe/update', 'BanXeController@update')->middleware('auth');
 Route::post('/admin/ban-xe/delete', 'BanXeController@destroy')->middleware('auth');
 
+Route::get('/ban-xe/{tieu_de}', 'BanXeController@show');
+Route::get('/ban-xe', 'BanXeController@index');
+
+
 //tuyen dung
 Route::get('/admin/tuyen-dung', 'TuyenDungController@indexAdmin')->middleware('auth');
 Route::post('/admin/tuyen-dung/update', 'TuyenDungController@update')->middleware('auth');
@@ -62,6 +66,8 @@ Route::get('/admin/tin-tuc/{id}/edit', 'TinTucController@edit')->middleware('aut
 Route::post('/admin/tin-tuc', 'TinTucController@store')->middleware('auth');
 Route::post('/admin/tin-tuc/update', 'TinTucController@update')->middleware('auth');
 Route::post('/admin/tin-tuc/delete', 'TinTucController@destroy')->middleware('auth');
+
+Route::get('/tin-tuc/{tieu_de}', 'TinTucController@show');
 
 //lien he
 Route::get('/admin/lien-he/', 'LienHeController@indexAdmin')->middleware('auth');
@@ -80,3 +86,10 @@ Route::post('/admin/cai-dat/update', 'CaiDatController@update')->middleware('aut
 //slider
 Route::get('/admin/slider', 'SliderController@indexAdmin')->middleware('auth');
 Route::post('/admin/slider/update', 'SliderController@update')->middleware('auth');
+
+
+//moi gioi bds
+Route::get('/admin/moi-gioi-bds', 'MoiGioiBdsController@indexAdmin')->middleware('auth');
+Route::get('/admin/moi-gioi-bds/create', 'MoiGioiBdsController@create')->middleware('auth');
+Route::post('/admin/moi-gioi-bds', 'MoiGioiBdsController@store')->middleware('auth');
+Route::post('/admin/moi-gioi-bds/delete', 'MoiGioiBdsController@destroy')->middleware('auth');

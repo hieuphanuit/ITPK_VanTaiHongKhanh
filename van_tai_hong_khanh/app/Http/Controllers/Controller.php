@@ -64,16 +64,5 @@ class Controller extends BaseController
         return null;
     }
 
-    function upload_images(Request $request)
-    {
-        if($request->hasFile('hinh_mo_ta')) {
-            $file = $request->file('hinh_mo_ta');
-            if($file->isValid()){
-                $path = public_path() . '/upload/';
-                $file->move($path, $file->getClientOriginalName() );
-                return $file->getClientOriginalName();
-            }
-        }
-        return null;
-    }
+
 }

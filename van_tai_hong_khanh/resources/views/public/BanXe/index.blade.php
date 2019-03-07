@@ -11,14 +11,14 @@
                 <div class="col-md-8">
 
                     <div class="row">
-                        @foreach($dichvus as $dichvu)
+                        @foreach($banxes as $banxe)
                             
                                 <div class="col-md-4" style="margin-top: 40px">
-                                    <a href="{{url('dich-vu/'.$dichvu->url_prefix)}}">
+                                    <a href="{{url('ban-xe/'.$banxe->url_prefix)}}">
                                         <div class="item-container" style="width: 250px; height:250px">
-                                            <img src="{{ ($dichvu->hinh_mo_ta) ? asset('upload/'.$dichvu->hinh_mo_ta) : asset('upload/no-image.png') }}" alt="hinh_mo_ta" class="item-image" style='height: 100%; width: 100%; object-fit: contain'>
+                                            <img src="{{ ($banxe->hinh_mo_ta) ? asset('upload/'.$banxe->hinh_mo_ta) : asset('upload/no-image.png') }}" alt="hinh_mo_ta" class="item-image" style='height: 100%; width: 100%; object-fit: contain'>
                                             <div class="item-overlay">
-                                                <div class="item-text">{{$dichvu->tieu_de}}</div>
+                                                <div class="item-text">{{$banxe->tieu_de}}</div>
                                             </div>
                                         </div>
                                     </a>

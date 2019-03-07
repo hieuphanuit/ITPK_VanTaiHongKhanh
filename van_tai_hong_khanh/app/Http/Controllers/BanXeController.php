@@ -9,7 +9,9 @@ class BanXeController extends Controller
     public function index()
     {
         //
+        $banxes = bai_viet::where('loai_bai_viet','ban_xe')->get();
 
+        return view('public.BanXe.index',['banxes' => $banxes]);
         
     }
 
@@ -39,6 +41,9 @@ class BanXeController extends Controller
         $ban_xe->seo_description = $input['seo_description'];
         $ban_xe->seo_robots = $input['seo_robots'];
         $ban_xe->loai_bai_viet = 'ban_xe';
+        $ban_xe->url_prefix = $this->utf8tourl($input['tieu_de']);
+        $hinh_mo_ta = $this->upload_image($request);
+        $ban_xe->hinh_mo_ta = $hinh_mo_ta;
         $ban_xe->save();
         return redirect('/admin/ban-xe');
     }
@@ -49,11 +54,12 @@ class BanXeController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function show($id)
+    public function show($url_prefix)
     {
         //
-        $ban_xe = bai_viet::where('id',$id)->first();
-        return view('admin.BanXe.show',['ban_xe' => $ban_xe]);
+
+        $ban_xe = bai_viet::where([['url_prefix',$url_prefix],['loai_bai_viet','ban_xe']])->first();
+        return view('public.BanXe.show',['ban_xe' => $ban_xe]);
     }
 
     /**
@@ -118,5 +124,6 @@ class BanXeController extends Controller
         $ban_xe = bai_viet::where('id',$id)->first();
         return view('admin.BanXe.show',['ban_xe' => $ban_xe]);
     }
+
     
 }

@@ -8,7 +8,10 @@
             <label for="usr">Tên Dịch Vụ:</label>
             <input type="text" class="form-control" name="tieu_de" value="{{$dich_vu->tieu_de}}">
         </div>
-        <textarea name="noi_dung" class="summernote" value=""></textarea>
+        <textarea name="noi_dung">{{ $dich_vu->noi_dung }}</textarea>
+        <script>
+                CKEDITOR.replace( 'noi_dung' );
+        </script>
         <br>
 
         <div>
@@ -41,16 +44,4 @@
 <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script> 
 
 <!-- include summernote css/js-->
-<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>    
-
-<script>
-        $(document).ready(function() {
-            $('.summernote').summernote({height: 300});
-            var s = unescape('{{ $dich_vu->noi_dung }}');
-
-            s = $.parseHTML(s)[0].textContent;
-            $(".summernote").summernote("code", s);
-        });
-</script>
 @endsection

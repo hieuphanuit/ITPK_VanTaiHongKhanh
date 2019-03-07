@@ -21,6 +21,8 @@
         </ul>
     </div>    
 @endif
+
+<div class="container">
     <div style="padding: 30px 0px;">
         <div class="row contact-box">
             <div class="col-md-4">
@@ -62,4 +64,5 @@
             </div>
         </div>
     </div>
+</div>
 @endsection

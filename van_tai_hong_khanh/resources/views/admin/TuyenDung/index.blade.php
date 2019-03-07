@@ -7,7 +7,10 @@
             <label for="usr">Tiêu Đề:</label>
             <input type="text" class="form-control" name="tieu_de" value="{{$tuyen_dung->tieu_de}}">
         </div>
-        <textarea name="noi_dung" class="summernote" value=""></textarea>
+        <textarea name="noi_dung">{{ $tuyen_dung->noi_dung }}</textarea>
+        <script>
+                CKEDITOR.replace( 'noi_dung' );
+        </script>
         <br>
         <div>
             <h3>Công cụ SEO</h3>
