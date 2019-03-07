@@ -227,3 +227,30 @@ footer a{
 	  
 }
 
+#mau-xe-hp-container .owl-nav{
+	display: none;
+}
+
+#mau-xe-hp-container .owl-dots{
+	text-align: right;
+	position: relative;
+	top: -40px;
+}
+
+#tin-tuc-hp-container .line{
+	border-top: 2px solid rgb(255, 204, 81);
+	margin-left: 0px;
+	margin-top: 0px;
+	width: 150px;
+	margin-left: 200px;
+	margin-top: 10px;
+}
+#tin-tuc-hp-container .tin-tuc-title{
+	margin-top: 30px;
+	margin-left: 200px;
+	  font-size: 35px;
+	  font-family: "Roboto";
+	  color: rgb(50, 50, 50);
+  text-transform: uppercase;
+
+}

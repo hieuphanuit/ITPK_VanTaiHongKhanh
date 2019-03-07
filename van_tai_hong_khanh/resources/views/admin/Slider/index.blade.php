@@ -4,6 +4,20 @@
 
 <form action="{{url('/admin/slider/update')}}" method="POST" enctype="multipart/form-data">
 {{ csrf_field() }}
+
+        <label for="">Nội dung bài viết:</label>
+        <textarea name="noi_dung">{{ $bai_viet->noi_dung }}</textarea>
+        <script>
+                CKEDITOR.replace( 'noi_dung' );
+        </script>
+
+        <label for="">Mô tả bài viết:</label>
+        <textarea name="mo_ta">{{ $bai_viet->mo_ta }}</textarea>
+        <script>
+                CKEDITOR.replace( 'mo_ta' );
+        </script>
+        <input type='hidden' name="bai_viet_id" value="{{$bai_viet->id}}">
+        
 <label for="idLoaiMatHang">Hình ảnh Slider 1:</label>
     @foreach ($slider_1s as $slider_1)
     <div class="form-group">

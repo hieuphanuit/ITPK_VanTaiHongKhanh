@@ -12,28 +12,30 @@
 
 @endsection
 @section('content')
-@if (\Session::has('success'))
-    <br>
-    <div class="alert alert-success">
-        <ul>
-            <li>{!! \Session::get('success')[0]!!}</li>
-        </ul>
+    <div class="container">
+    @if (\Session::has('success'))
+        <br>
+        <div class="alert alert-success">
+            <ul>
+                <li>{!! \Session::get('success')[0]!!}</li>
+            </ul>
+        </div>
+    @endif
+    @if (\Session::has('errors'))
+        <div class="alert alert-danger">
+            <ul>
+                <li>{!! \Session::get('errors')[0] !!}</li>
+            </ul>
+        </div>    
+    @endif
+    <div style="width: 100%">
+            <?php echo($gioi_thieu->noi_dung) ?>
     </div>
-@endif
-@if (\Session::has('errors'))
-    <div class="alert alert-danger">
-        <ul>
-            <li>{!! \Session::get('errors')[0] !!}</li>
-        </ul>
-    </div>    
-@endif
-   <div style="width: 100%">
-        <?php echo($gioi_thieu->noi_dung) ?>
-   </div>
-   <div>
-        <label style="padding-top: 35px; vertical-align: middle">Chia sẻ: </label>
-        <div id="share" style="display: inline-block"></div>
-   </div>
+    <div>
+            <label style="padding-top: 35px; vertical-align: middle">Chia sẻ: </label>
+            <div id="share" style="display: inline-block"></div>
+    </div>
+    </div>
 @endsection
 
 @section('css')

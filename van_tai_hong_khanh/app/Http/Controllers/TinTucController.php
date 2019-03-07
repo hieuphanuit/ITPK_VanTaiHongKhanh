@@ -36,6 +36,10 @@ class TinTucController extends Controller
         $tin_tuc = new bai_viet;
         $tin_tuc->tieu_de = $input['tieu_de'];
         $tin_tuc->noi_dung = $input['noi_dung'];
+        $tin_tuc->mo_ta = $input['mo_ta'];
+        $tin_tuc->url_prefix = $this->utf8tourl($input['tieu_de']);
+        $hinh_mo_ta = $this->upload_image($request);
+        $tin_tuc->hinh_mo_ta = $hinh_mo_ta;
         $tin_tuc->seo_title = $input['seo_title'];
         $tin_tuc->seo_description = $input['seo_description'];
         $tin_tuc->seo_robots = $input['seo_robots'];
@@ -50,11 +54,11 @@ class TinTucController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function show($id)
+    public function show($url_prefix)
     {
         //
-        $tin_tuc = bai_viet::where('id',$id)->first();
-        return view('admin.TinTuc.show',['tin_tuc' => $tin_tuc]);
+        $tin_tuc = bai_viet::where([['url_prefix',$url_prefix],['loai_bai_viet','tin_tuc']])->first();
+        return view('public.TinTuc.show',['tin_tuc' => $tin_tuc]);
     }
 
     /**
